@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+	<information>
+		<name>P a n d a</name>
+		<version>1.0</version>
+		<description>
+			<![CDATA[ 수익형블로그를 위한 가볍고 빠른 스킨입니다. ]]>
+		</description>
+		<license>
+			<![CDATA[ MIT License ]]>
+		</license>
+	</information>
+	<author>
+		<name>라이브러리 브랜드</name>
+		<homepage>https://creativestudio.kr</homepage>
+		<email>www.creativestudio.kr</email>
+	</author>
+	<default>
+		<entriesOnPage>6</entriesOnPage>
+		<entriesOnList>6</entriesOnList>
+		<recentEntries>6</recentEntries>
+		<recentComments>0</recentComments>
+		<recentTrackbacks>0</recentTrackbacks>
+		<itemsOnGuestbook>0</itemsOnGuestbook>
+		<tagsInCloud>0</tagsInCloud>
+		<sortInCloud>3</sortInCloud>
+		<expandComment>0</expandComment>
+		<lengthOfRecentNotice>0</lengthOfRecentNotice>
+		<lengthOfRecentEntry>27</lengthOfRecentEntry>
+		<lengthOfRecentComment>0</lengthOfRecentComment>
+		<lengthOfRecentTrackback>0</lengthOfRecentTrackback>
+		<lengthOfLink>30</lengthOfLink>
+		<showListOnCategory>1</showListOnCategory>
+		<showListOnArchive>1</showListOnArchive>
+		<tree>
+			<color>000000</color>
+			<bgColor>ffffff</bgColor>
+			<activeColor>000000</activeColor>
+			<activeBgColor>eeeeee</activeBgColor>
+			<labelLength>27</labelLength>
+			<showValue>0</showValue>
+		</tree>
+		<contentWidth>1920</contentWidth>
+	</default>
+	<variables>
+		<variablegroup name="리스트">
+			<variable>
+				<name>list-type</name>
+				<label><![CDATA[ 리스트 타입 ]]></label>
+				<description><![CDATA[]]></description>
+				<type>SELECT</type>
+				<option><![CDATA[[{"name":"list-type-default","label":"북리뷰","value":""}, {"name":"list-type-vertical","label":"베스트셀러","value":"list-type-vertical"}, {"name":"list-type-thumbnail","label":"뉴북","value":"list-type-thumbnail"}, {"name":"list-type-text","label":"뉴스레터","value":"list-type-text"}]]]></option>
+				<default></default>
+			</variable>
+		</variablegroup>
+		<variablegroup name="사이드바">
+			<variable>
+				<name>layout-aside</name>
+				<label><![CDATA[ 사이드바 위치 ]]></label>
+				<description><![CDATA[]]></description>
+				<type>SELECT</type>
+				<option><![CDATA[[{"name":"layout-aside-left","label":"좌측","value":"layout-aside-left"}, {"name":"layout-aside-right","label":"우측","value":"layout-aside-right"}]]]></option>
+				<default>layout-aside-right</default>
+			</variable>
+		</variablegroup>
+	</variables>
+</skin>

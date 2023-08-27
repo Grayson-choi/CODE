@@ -6,6 +6,27 @@ from moviepy.editor import *
 # 유튜브 영상 편집
 # https://zulko.github.io/moviepy/install.html
 
+# url = "https://youtu.be/STGe54blV_0"
+url_list = [
+    "https://youtu.be/gTPtbF-gud0",
+]
+
+
+def download_youtube_video(url_list):
+    for url in url_list:
+        yt = pytube.YouTube(url, on_progress_callback=on_progress)
+        print(yt.streams)
+
+        save_dir = "./downloads" # 저장경로
+
+        yt.streams.filter(progressive=True, file_extension="mp4")\
+            .order_by("resolution")\
+            .desc()\
+            .first()\
+            .download(save_dir)
+    
+download_youtube_video(url_list)
+
 def make_youtube_clip(file, start, *end):
     # Load myHolidays.mp4 and select the subclip 00:00:50 - 00:00:60
     clip = VideoFileClip(file).subclip(start)
@@ -23,7 +44,7 @@ def make_youtube_clip(file, start, *end):
     video = CompositeVideoClip([clip])
 
     # Write the result to a file (many options available !)
-    video.write_videofile(f"downloads/{file}_clip.mp4")
+    video.write_videofile(f"{file}_clip.mp4")
 
 file_list = os.listdir("./downloads")
 
@@ -31,30 +52,5 @@ folder = "./downloads"
 for file in file_list:
     # if "lovers" in file:
         # make_youtube_clip(f"{folder}/{file}", 30)
-    if "Saint" in file:
-        make_youtube_clip(f"{folder}/{file}", 11)
-
-        
-
-
-# url = "https://youtu.be/STGe54blV_0"
-url_list = [
-    "https://youtu.be/F1RevEIZ0Vs", 
-    "https://youtu.be/STGe54blV_0",
-    "https://youtu.be/Z-R3wV7kGeY",
-]
-
-
-def download_youtube_video(url_list):
-    for url in url_list:
-        yt = pytube.YouTube(url, on_progress_callback=on_progress)
-        print(yt.streams)
-
-        save_dir = "./downloads" # 저장경로
-
-        yt.streams.filter(progressive=True, file_extension="mp4")\
-            .order_by("resolution")\
-            .desc()\
-            .first()\
-            .download(save_dir)
-    
+    if "Fun" in file:
+        make_youtube_clip(f"{folder}/{file}", 49)
